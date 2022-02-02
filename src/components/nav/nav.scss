@@ -1,0 +1,77 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.nav {
+    position: fixed;
+    padding: 50px 0px 300px 0px;
+    width: 80px;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    background-color: $white;
+    z-index: 10;
+
+    .nav-content {
+        position: relative;
+        border-right: 1px solid $grey;
+        width: inherit;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 40px;
+        }
+
+        .page-links {
+            margin-top: 50px;
+
+            .link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+                font-size: 150%;
+                transition: all .3s;
+                color: $darker-grey;
+                width: 50px;
+                height: 50px;
+                border-radius: 3px;
+                background-color: $white;
+
+                &:hover, &.active {
+                    background-color: rgba($blue, .15);
+                    color: $blue;
+                }
+            }
+        }
+
+        .user-zone {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .user {
+                cursor: pointer;
+                
+                img {
+                    width: 70px;
+                }
+            }
+
+            .sign-out {
+                font-size: 150%;
+                cursor: pointer;
+                transition: all .3s;
+                margin-top: 50px;
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+}

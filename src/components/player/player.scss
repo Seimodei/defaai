@@ -1,0 +1,63 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+
+.player {
+    display: flex;
+    padding: 15px;
+    position: relative;
+    background-color: rgba($grey, .5);
+    border-radius: 10px;
+    width: 570px;
+    border: 1px solid #fff;
+    transition: all .3s;
+    cursor: pointer;
+
+    @include mQ(781px) {
+        overflow: hidden;
+        width: 300px;
+    }
+
+
+    .controls {
+        font-size: 300%;
+        color: $dark-grey;
+        cursor: pointer;
+        transition: color .3s;
+    }
+
+    .progress-bar {
+        margin-left: 20px;
+        pointer-events: none;
+
+
+        .type {
+            font-weight: 700;
+            font-size: 90%;
+        }
+
+        .waveform-container {
+            width: 500px;
+            position: absolute;
+        }
+
+        .waveform-bg {
+            clip-path: url("#waveform-mask");
+            fill: $dark-grey;
+        }
+
+        .waveform-progress {
+            clip-path: url("#waveform-mask");
+            fill: $blue;
+        }
+    }
+
+    &.active, &:hover {
+        background-color: rgba($blue, .1);
+        border: 1px solid $blue;
+
+        .controls {
+            color: $blue;
+        }
+    }
+}

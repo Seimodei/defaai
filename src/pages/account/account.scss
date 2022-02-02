@@ -1,0 +1,180 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+
+
+.account {
+    padding: 30px 30px 100px 130px;
+    position: relative;
+    animation: enter .5s 1;
+
+    .account-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px 0px 0px;
+        border-bottom: 1px solid $grey;
+
+        span {
+            font-weight: 700;
+            color: $red;
+            cursor: pointer;
+        }
+
+        @include mQ(930px) {
+            flex-direction: column;
+            padding: 0px 20px 30px 0px;
+    
+            h1 {
+                font-size: 150%;
+            }
+        }
+    }
+
+    .account-tabs {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 250px;
+        font-weight: 700;
+        
+        span {
+            color: $darker-grey;
+            cursor: pointer;
+            transition: all .3s;
+
+            &:hover, &.active {
+                color: $blue;
+            }
+        }
+    }
+
+    section {
+        margin-top: 50px;
+
+        .profile {
+            animation: enter .5s 1;
+
+            .profile-image {
+                display: flex;
+                align-items: center;
+
+                .image {
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    overflow: hidden;
+
+                    img {
+                        width: inherit;
+                        height: inherit;
+                    }
+                }
+
+                .icon {
+                    margin-left: 20px;
+                    color: $blue;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    background-color: rgba($blue, .15);
+                    border-radius: 50%;
+                }
+            }
+
+            .user-info {
+                margin-top: 30px;
+
+                .info-row {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 25px;
+
+                    @include mQ(1039px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .MuiInputBase-root {
+                            width: 300px !important;
+                        }
+                    }
+                    
+                    .input {
+                        &:nth-child(2) {
+                            margin-left: 30px;
+
+                            @include mQ(1039px) {
+                                margin-left: 0px;
+                                margin-top: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .plan {
+            display: flex;
+            align-items: flex-end;
+            animation: enter .5s 1;
+
+            @include mQ(1175px) {
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            @include mQ(624px) {
+                
+            }
+
+            .plan-type {
+                &:not(:first-child) {
+                    margin-left: 50px;
+
+                    @include mQ(600px) {
+                        margin-left: 0px;
+                    }
+                }
+            }
+        }
+
+        .billing {
+            animation: enter .5s 1;
+            
+            .t-head {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                width: 1000px;
+
+                @include mQ(969px) {
+                    width: 100%;
+                }
+
+                span {
+                    font-weight: 700;
+                    color: $darker-grey;
+                }
+            }
+
+            .t-body {
+                .row {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    width: 1000px;
+                    margin-top: 30px;
+                    font-weight: 700;
+                    font-size: 90%;
+
+                    @include mQ(969px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

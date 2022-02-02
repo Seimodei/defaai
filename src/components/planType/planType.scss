@@ -1,0 +1,99 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.plan-type {
+    .feature {
+        width: 200px;
+        height: 390px;
+        position: relative;
+
+        @include mQ(1175px) {
+            margin-top: 50px;
+        }
+
+        .plan-name {
+            font-weight: 700;
+            text-transform: capitalize;
+            font-size: 150%;
+            padding-bottom: 15px;
+        }
+
+        .point {
+            display: flex;
+            align-items: center;
+
+            .f-icon {
+                font-size: 70%;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 90%;
+                display: block;
+                margin-left: 10px;
+            }
+
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+
+        .plan-price {
+            margin-top: 15px;
+            font-weight: 800;
+            position: absolute;
+            bottom: 45px;
+
+            span {
+                font-size: 200%;
+            }
+        }
+
+        .plan-action {
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+
+            span {
+                font-weight: 700;
+                
+                &.btn {
+                    padding: 10px 30px;
+                    background-color: rgba($blue, .15);
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: all .3s;
+
+                    &:hover {
+                        background-color: $blue;
+                        color: $white;
+                    }
+                }
+
+                &.text {
+                    display: block;
+                    font-size: 140%;
+                    width: 84%;
+                    text-align: center;
+                    color: darken($green, 15);
+                }
+            }
+        }
+
+        &.active {
+            height: 400px;
+            background-color: $green;
+            color: $white;
+            padding: 30px 20px;
+            border-radius: 10px;
+
+            .plan-price {
+                bottom: 80px;
+            }
+
+            .plan-action {
+                bottom: 40px;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+
+.video-preview {
+    width: 750px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba($grey, .65);
+
+    @include mQ(1490px) {
+        width: 500px;
+
+        .MuiInputBase-root {
+            width: 500px !important;
+        }
+    }
+
+    @include mQ(730px) {
+        width: 300px;
+
+        .MuiInputBase-root {
+            width: 300px !important;
+        }
+    }
+
+    .thumbnail-group {
+        width: inherit;
+        position: relative;
+
+        img {
+            width: inherit;
+            border-radius: 20px;
+        }
+
+        .btn-wrap {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            bottom: 30px;
+
+            .preview-button {
+                display: block;
+                padding: 10px 30px;
+                background-color: lighten($blue, 50);
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all .3s;
+                font-weight: 700;
+    
+                &:hover {
+                    background-color: $blue;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .script-group {
+        margin-top: 15px;
+        background-color: $white;
+        padding: 0px 0px 20px 0px;
+        border-radius: 10px;
+    }
+
+    .bottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 0px 15px;
+        margin-top: 20px;
+
+        span {
+            color: $dark-grey;
+            font-weight: 600;
+        }
+    }
+}

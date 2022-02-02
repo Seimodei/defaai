@@ -1,0 +1,54 @@
+@mixin mQ ($arg) {
+    @media (max-width: #{$arg}) {
+        @content;
+    }
+};
+
+
+
+@mixin auth-page {
+    .auth-page {
+        padding: 30px 0px 0px 130px;
+        position: relative;
+        animation: enter .5s 1;
+
+        .auth-page-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 200px;
+
+            @include mQ(640px) {
+                align-items: flex-start;
+            }
+
+            .action {
+                margin-top: 40px;
+            }
+
+            .error {
+                color: $red;
+                font-weight: 700;
+                margin-top: 20px;
+            }
+
+            .prompt {
+                margin-top: 50px;
+                font-weight: 700;
+
+                a {
+                    color: $blue;
+                }
+            }
+        }
+
+        .bg-image {
+            position: absolute;
+            opacity: .1;
+            width: 700px;
+            right: -200px;
+            top: -150px;
+        }
+    }
+}

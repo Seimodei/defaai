@@ -1,0 +1,30 @@
+$main: #2b255c;
+$white: #fff;
+
+$light-grey: #f1f2f6;
+$grey: #dfe6e9;
+$dark-grey: #b2bec3;
+$darker-grey: #636e72;
+
+$green: #45B13D;
+$red: #ee5253;
+$yellow: #fd9644;
+
+$purple: #6c5ce7;
+$blue: #0984e3;
+
+
+
+:export {
+    main: $main;
+    whiteColor: $white;
+    greyColor: $grey;
+    lightGrey: $light-grey;
+    darkGrey: $dark-grey;
+    darkerGrey: $darker-grey;
+    greenColor: $green;
+    redColor: $red;
+    yellowColor: $yellow;
+    purpleColor: $purple;
+    blue: $blue;
+}
